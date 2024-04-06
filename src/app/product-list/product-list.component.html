@@ -1,0 +1,18 @@
+
+<h1>Products</h1>
+<div class="row row-cols-3">
+<div *ngFor="let product of productItems; let i = index" >
+
+    <div>
+    <div class="card" style="width: 25rem; padding: 5px;">
+        <img src="./assets/img/{{product.image}}" class="card-img-top" alt="product image">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <p>{{product.price | currency: "EUR"}} </p>
+          <p class="card-text">{{product.description}}</p>
+          <a routerLink="/Details/{{ i }}" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    </div>
+</div>
+</div>

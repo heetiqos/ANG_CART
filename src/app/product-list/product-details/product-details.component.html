@@ -1,0 +1,7 @@
+<div>
+    <img height="200" src="./assets/img/{{product.image}}" alt="">
+    <p>{{ product.name }}</p>
+    <p>{{ product.description }}</p>
+    <p>{{ product.price | currency:"EUR"}} </p>
+    <button (click)="onAddToCart()" class="btn btn-primary">Add to Cart</button>
+</div>

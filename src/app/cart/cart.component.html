@@ -1,0 +1,33 @@
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>name</th>
+                <th>price</th>
+                <th>qtty</th>
+                <th>action</th>
+                <th>subtotal</th>
+            </tr>
+
+        </thead>
+        <tbody>
+            @for(product of cartItems; track product; let i = $index) {
+                <tr>
+                    <th>{{ i + 1 }}</th>
+                    <td> {{product.name}}</td>
+                    <td> {{product.price | currency:"EUR"}}</td>
+                    <td> {{product.qtty}}</td>
+                    <td><button (click)="decQtty(product)" class="btn btn-warning">-</button><!--to decrease the button qtty-->
+                    <button (click)="onDelete(i)" class="btn btn-danger">del</button>
+                    <button (click)="incQtty(product)" class="btn btn-primary">+</button> <!--to increase the button qqty-->
+                    </td>
+
+                    <td>{{(product.price * product.qtty) |currency:"EUR" }}</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <hr>
+    <h2>Total: {{ total |currency:"EUR"}}</h2>
+</div>
